@@ -1,3 +1,4 @@
+let myID;
 
 const loadCategory = async () =>{
     const res = await fetch('https://openapi.programming-hero.com/api/videos/categories');
@@ -75,14 +76,17 @@ const loadCards = async (id) =>{
         `;
 
     }
-    
+    myID = id;
+   
 }
 
 loadCategory();
 loadCards(1000);
 
+ 
+
 const sortByView = async() =>{
-    const res = await fetch('https://openapi.programming-hero.com/api/videos/category/1000');
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${myID}`);
 
     const data = await res.json();
     const dataArray = data.data;
@@ -94,7 +98,7 @@ const sortByView = async() =>{
        return (parseFloat(b.others.views.slice(0, -1)) - parseFloat(a.others.views.slice(0, -1)));
     });
 
-    // console.log(dataArray);
+    
 
     dataArray.forEach( el =>{
         const allCard = document.createElement('div');
