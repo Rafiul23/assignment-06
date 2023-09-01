@@ -25,9 +25,25 @@ const loadCards = async (id) =>{
     cardInfoArray.forEach( el =>{
         const allCard = document.createElement('div');
         allCard.classList = 'card bg-base-100 shadow-lg'
+
+        const getTimeString = el.others.posted_date;
+        const getTime = parseInt(getTimeString);
+        
+
+        const hours = Math.floor((getTime / 3600));
+        const minutes = Math.floor((getTime % 3600) / 60);
+        const seconds = ((getTime % 3600) % 60);
+
+        console.log(hours, minutes, seconds);
+
         allCard.innerHTML = `
 
-        <figure><img class="h-[250px] w-full" src="${el.thumbnail}" /></figure>
+       <div class='relative'>
+       <figure><img class="h-[250px] w-full" src="${el.thumbnail}" /></figure>
+         <div class='absolute p-1 bottom-1 right-2 bg-black text-white'>
+            ${(!isNaN(getTime) ? (hours + ' : ' + minutes + ' : ' + seconds) : ' '  )}
+         </div>
+       </div>
         <div class="flex gap-1">
            <img class="w-[80px] mt-5 ml-5 h-[80px] rounded-full" src="${el.authors[0].profile_picture}" />
            <div class='card-body'>
