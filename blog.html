@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+</head>
+<body>
+    <h1>Discuss the scope od var, let, const.</h1>
+    <p>The scope of variable declared by Var is global or functional, which means we can access the variable from anywhere.On the other hand, the scope of variable declared by let and const is block scope, which means we cannot access the variable from outside a block. </p>
+
+    <br>
+
+    <p>The variable declared by var can be redeclaed and reassigned. But the variable declared by let cannot be redeclared.And we cannot reassign and redeclare a variable declared by const. </p>
+
+    <br>
+
+    <p>The variables declared by var, let and const, are hoisted on the top of their scope. The variables declared by var is initialized with undefined, but in case of let and const, variable ared not initialized.  </p>
+
+    <h1>The use cases of undefined and null</h1>
+
+    <p>The use cases of undefined are as below:</p>
+    <br>
+    <ol>
+        <li>
+            <p>
+                When we declare a variable without assigning a value, the varibla will be initialized as udefined.For example: 
+            </p>
+            
+            <p>
+                let name; <br>
+                console.log(name); // undefined. 
+            </p>
+        </li>
+
+        <li>
+            <p>
+                If we call a function without passing necessary number of arguement, the function will set the parameter as undefined.For example:
+            </p>
+            
+            <p>let sum = (a,b) => a+b; <br>
+                sum(9); // undefined. 
+            </p>
+        </li>
+        <br>
+
+        <li>
+            <p>
+                When we do not return a value from a function and call the function, it will return undefined. For example: 
+            </p>
+            
+            <p>
+                function sum (a,b) {
+                    let sum = a + b;
+                }; <br>
+                sum(3, 4); // undefined.
+            </p>
+        </li>
+    </ol>
+    <p>
+        The use cases of null are as below:
+    </p>
+
+    <ol>
+        <li>
+            <p>
+                Null is an assignment value. It is intentionally assigned by developers. It is assigned, when a variable does not have any value.For example:
+            </p>
+            <p>
+                let a = null; // it means at this stage, we don't  have any value of a, so we assign the value as null. 
+            </p>
+        </li>
+
+        <li>
+            <p>
+               If we want to reset a value, we can assign null.For example:
+            </p>
+            <p>
+               let newUser = {
+                name: 'Rakib',
+                id: 40
+               };
+               <br>
+              // If in any case, we want to reset the values of newUser object, we can assign null. <br>
+               newUser = null;
+            </p>
+        </li>
+
+        <li>
+            <p>
+                We can check the presence of something by null which we want find.For example, let's we have a function which will return us a value. We can check the value as follow, <br>
+                <pre>
+                    let result = findNumber([...data]);
+                    if (result !== null) {
+                        return 'data found';
+                    } else {
+                        return 'data not found';
+                    }
+                </pre>
+               
+            </p>
+        </li>
+    </ol>
+
+    <h1>What do you mean by REST API?</h1>
+    <p>
+        API means application programming interface.But REST API means representational state traansfer application programming interface.REST API is a set of architectural principles and disciplines by which we can design networked application.The most popular web companies including Facebook, Twitter, Google, Youtube are using REST API for buiding their applications.This API is mostly used in HTTP based API.  <br>
+        How REST API works: When a client request something through REST API, the server transfer back the present resource available in a standard way.Thus REST API works.
+    </p>
+</body>
+</html>
