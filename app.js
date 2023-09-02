@@ -10,7 +10,7 @@ const loadCategory = async () =>{
         const categoryDiv = document.createElement('div');
         
         categoryDiv.innerHTML = `
-            <button id="${el.category_id}" class='btn ml-5 hover:bg-[#FF1F3D] hover:text-white text-black' onclick="loadCards('${el.category_id}')">${el.category}</button>
+            <button id="${el.category_id}" class='btn ml-5 hover:bg-[#FF1F3D] focus:bg-[#ff1f3d] focus:text-white hover:text-white text-black' onclick="loadCards('${el.category_id}')">${el.category}</button>
         `;
         categoryContainer.appendChild(categoryDiv);
     });
